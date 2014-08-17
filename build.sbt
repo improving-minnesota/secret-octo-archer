@@ -1,13 +1,10 @@
 import WebKeys._
 
-// TODO Replace with your project's/module's name
-name := """play-angular-require-seed"""
+name := """chores"""
 
-// TODO Set your organization here; ThisBuild means it will apply to all sub-modules
-organization in ThisBuild := "your.organization"
+organization in ThisBuild := "com.objectpartners"
 
-// TODO Set your version here
-version := "2.3.3-SNAPSHOT"
+version := "0.0.1-SNAPSHOT"
 
 // Scala Version, Play supports both 2.10 and 2.11
 //scalaVersion := "2.10.4"
@@ -17,8 +14,11 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 // Dependencies
 libraryDependencies ++= Seq(
+  jdbc,
+  anorm, // https://www.playframework.com/documentation/2.2.1/ScalaAnorm
   filters,
   cache,
+  "mysql" % "mysql-connector-java" % "5.1.21",
   // WebJars (i.e. client-side) dependencies
   "org.webjars" % "requirejs" % "2.1.14-1",
   "org.webjars" % "underscorejs" % "1.6.0-3",
